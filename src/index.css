@@ -1,0 +1,22 @@
+/* Reset and global styles */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #f9a825;
+}
+
+p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
