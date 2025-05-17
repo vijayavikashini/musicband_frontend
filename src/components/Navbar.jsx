@@ -1,10 +1,7 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  
-  
-
   return (
     <div>
       <style>
@@ -20,18 +17,15 @@ const Navbar = () => {
             top: 0;
             z-index: 1000;
           }
-          nav a, nav button {
+          nav a {
             font-size: 1.2rem;
-            color: #fff; 
+            color: #fff;
             padding: 0.5rem 1rem;
             border-radius: 5px;
             transition: background 0.3s ease-in-out;
-            border: none;
-            cursor: pointer;
             text-decoration: none;
-            background: none;
           }
-          nav a:hover, nav button:hover {
+          nav a:hover {
             background: #df3f8b;
             color: #000000;
           }
@@ -39,13 +33,13 @@ const Navbar = () => {
       </style>
 
       <nav>
+         <Link to="/login">Login</Link>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/discography">Discography</Link>
         <Link to="/events">Events</Link>
         <Link to="/contact">Contact</Link>
-        
-      
+       
       </nav>
     </div>
   );

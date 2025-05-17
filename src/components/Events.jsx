@@ -1,51 +1,42 @@
 import React from "react";
 
-const Events = () => 
-  
-  //FETCHING API
-  // {
-  //   const [events, setEvents] = useState([]);
-
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/api/events")
-  //     .then((res) => res.json())
-  //     .then((data) => setEvents(data));
-  // }, []);
-
-  // }
-  //OBJ CODE
-  {
+const Events = () => {
   const events = [
     {
-      id: 1,
-      title: "World Tour Kickoff",
-      date: "February 25, 2025",
-      location: "Madison Square Garden, New York",
-      image: "https://media.pitchfork.com/photos/5e28b689e540c400084fddaa/4:3/w_800,h_600,c_limit/BTS.jpg",
-      youtubeLink: "https://youtu.be/Ha_xD1ZfI50?si=zNdfEqbRE3XbdZ-O", 
+      _id: "1",
+      title: "BTS World Tour 2025",
+      date: "2025-09-15T20:00:00Z",
+      location: "United States, New York",
+      image:
+        "https://phinf.wevpstatic.net/MjAyNTAyMTdfMTU3/MDAxNzM5NzczODc2NzAy.oOiaE7k-w7I9bZbs-q7bW5b4n1ukRR5GXuCKGk1eUVYg.Qr_mND1Ix2EbqaMcSwYHPP7emK3bT_H69U6gxlmYjogg.JPEG/83019882177247ceb4abf3a0ddb9250a867.jpg?type=f960_540",
+      youtubeLink: "//www.youtube.com/embed/YchqGFJ_ziA?si=iJqMPNeBspdUhKnx",
+      description: "This is a last year tour video of BTS World Tour.",
     },
     {
-      id: 2,
-      title: "Live Concert",
-      date: "June 15, 2025",
-      location: "Hyde Park, London",
-      image: "https://img.koreatimes.co.kr/upload/newsV2/images/202006/e01a1a168d084d72b6337685a9f78411.jpg/dims/resize/740/optimize",
-      youtubeLink: "https://youtu.be/IDdLFC5fYts?si=SV_SjvPoEC7WyZ2N", 
+      _id: "2",
+      title: "BTS Live in Concert",
+      date: "2025-10-01T19:00:00Z",
+      location: "South Korea, Seoul",
+      image:
+        "https://cdn.celluloidjunkie.com/wp-content/uploads/2022/02/16195818/BTS-Permission-To-Dance-Trafalgar-Releasing.jpg",
+      youtubeLink: "//www.youtube.com/embed/Iq6RdCTLBd8?si=YhkgO1j0L00zyOZP",
+      description: "This is a last year live concert video.",
     },
     {
-      id: 3,
-      title: "Fan Meet and Greet",
-      date: "August 10, 2025",
-      location: "Seoul Olympic Stadium, Seoul",
-      image: "https://assets.change.org/photos/5/em/xj/aNeMxJPlXHUNfnm-800x450-noPad.jpg?1515899628",
-      youtubeLink: "https://youtu.be/QXtsKkSsZUA?si=DVFxdK6ZlY_q95I4", 
+      _id: "3",
+      title: "BTS ARMY Fest 2025",
+      date: "2025-12-05T18:00:00Z",
+      location: "Los Angeles, California",
+      image:
+        "https://images.moneycontrol.com/static-mcnews/2024/07/20240709160452_Slideshow-14.jpg",
+      youtubeLink: "//www.youtube.com/embed/RFYNuSEpFf8?si=H6hRL-8UMZecgCn4",
+      description: "This is a last year ARMY Festa event highlight.",
     },
   ];
 
   return (
     <div>
-      <style>
-        {`
+      <style>{`
           .events-container {
             text-align: center;
             padding: 3rem 1rem;
@@ -53,66 +44,79 @@ const Events = () =>
             color: #fff;
           }
           .events-container h1 {
-            color: #000;
+            color: black;
           }
           .event-card {
-            margin: 2rem auto;
-            padding: 1.1rem;
+            margin: 3rem auto;
+            padding: 2rem;
             background: #151515;
             border-radius: 15px;
-            max-width: 1000px;
+            max-width: 1100px;
             text-align: left;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
           }
           .event-card img {
             width: 100%;
             border-radius: 5px;
             margin-bottom: 1.5rem;
-            max-height: 500px;
+            max-height: 600px;
             object-fit: cover;
           }
           .event-card h3 {
             color: #00caeb;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
           }
           .event-card p {
-            margin: 0.5rem 0;
+            margin: 1rem 0;
           }
-          .youtube-link {
+          .video-frame {
             margin-top: 1rem;
-            color: #ff0000;
-            font-size: 1.2rem;
-            text-decoration: none;
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
           }
-          .youtube-link:hover {
-            text-decoration: underline;
+          .description {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #ccc;
           }
-        `}
-      </style>
+        `}</style>
+
       <div className="events-container">
         <h1>Upcoming Events</h1>
-        {events.map((event) => (
-          <div className="event-card" key={event.id}>
-            <img src={event.image} alt={event.title} />
-            <h3>{event.title}</h3>
-            <p>
-              <strong>Date:</strong> {event.date}
-            </p>
-            <p>
-              <strong>Location:</strong> {event.location}
-            </p>
-            <a
-              href={event.youtubeLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="youtube-link"
-            >
-              Watch on YouTube
-            </a>
-          </div>
-        ))}
+        {events.length === 0 ? (
+          <p>No upcoming events available.</p>
+        ) : (
+          events.map((event) => {
+            // Since your links are already embed format, just prepend https: if missing
+            const embedLink = event.youtubeLink.startsWith("http")
+              ? event.youtubeLink
+              : "https:" + event.youtubeLink;
 
-
+            return (
+              <div className="event-card" key={event._id}>
+                <img src={event.image} alt={event.title} />
+                <h3>{event.title}</h3>
+                <p>
+                  <strong>Date:</strong>{" "}
+                  {new Date(event.date).toLocaleDateString()}
+                </p>
+                <p>
+                  <strong>Location:</strong> {event.location}
+                </p>
+                <iframe
+                  className="video-frame"
+                  src={embedLink}
+                  title={event.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <p className="description">{event.description}</p>
+              </div>
+            );
+          })
+        )}
       </div>
     </div>
   );
